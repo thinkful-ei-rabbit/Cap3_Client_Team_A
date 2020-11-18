@@ -1,5 +1,5 @@
 import React, {useContext, useState} from 'react';
-import {UserContext, UserProvider} from '../../context/userContext'
+import {UserContext} from '../../context/userContext'
 import AuthService from '../../services/auth.service'
 
 const LoginForm = (props) => {

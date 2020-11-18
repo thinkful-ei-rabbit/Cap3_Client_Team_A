@@ -1,34 +1,41 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import AuthService from "../../services/auth.service";
+import {UserContext} from '../../context/userContext'
+
 
 const RegistrationForm = (props) => {
   let [error, setError] = useState(null);
+  let [user_name, setUser] = useState(null);
+  let [pword, setPass] = useState(null);
 
-  let handleSubmit = (ev) => {
+  const context = useContext(UserContext)
+
+  let handleSubmit = async(ev) => {
     ev.preventDefault();
     const { firstName, lastName, email, username, password } = ev.target;
 
-    AuthService.postUser({
+    let responce = await AuthService.postUser({
       first_name: firstName.value,
       last_name: lastName.value,
       email: email.value,
       user_name: username.value,
       password: password.value,
     })
-      .then((user) => {
-        firstName.value = "";
-        lastName.value = "";
-        email.value = "";
-        username.value = "";
-        password.value = "";
-        props.onRegistrationSuccess();
-      })
-      .catch((res) => {
-        setError(res.error);
-      });
+
+    if(!responce.ok){
+      setError(responce.error);
+    }
+
+       props.onRegistrationSuccess(user_name, pword)
+     
+      
+      
   };
 
+ 
+
+  //console.log(sendToDash)
   //const error = setError.error
   return (
     <form onSubmit={handleSubmit}>
@@ -55,7 +62,7 @@ const RegistrationForm = (props) => {
       </div>
       <div>
         <label htmlFor="registration-username-input">Choose a username</label>
-        <input id="registration-username-input" name="username" required />
+        <input id="registration-username-input" name="username" onChange={(e) => setUser(e.target.value)} required />
       </div>
       <div>
         <label htmlFor="registration-password-input">Choose a password</label>
@@ -63,6 +70,7 @@ const RegistrationForm = (props) => {
           id="registration-password-input"
           name="password"
           type="password"
+          onChange={(e) => setPass(e.target.value)}
           required
         />
       </div>

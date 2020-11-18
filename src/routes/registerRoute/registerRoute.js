@@ -1,19 +1,22 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import RegistrationForm from '../../components/registrationForm/registrationForm'
+import AuthService from "../../services/auth.service";
+import {UserContext} from '../../context/userContext'
 
 const RegisterRoute = (props) => {
-  //  defaultProps = {
-  //   history: {
-  //     push: () => {},
-  //   },
-  // }
+  const context = useContext(UserContext)
 
-  let handleRegistrationSuccess = () => {
-   
-    props.history.push('/login')
+  let handleRegistrationSuccess = (name, pass) => {
+     AuthService.postLogin({
+      user_name: name,
+      password: pass,
+    })
+    .then(res => {
+      context.processLogin(res.authToken)
+    })
+
+    props.history.push('/')
   }
-
-  //console.log(props.history)
   
   return <>
   
