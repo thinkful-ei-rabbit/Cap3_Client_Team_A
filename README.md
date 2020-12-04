@@ -5,11 +5,11 @@
 
 <!-- ! highlight and 'ctrl+shift+L' to replace all ! -->
 
-thinkful-ei-rabbit
-Cap3_Client_Team_A
-theSwattr
-React, Node.js, Postgresql
-https://cap3-client-team-a.vercel.app/login
+<!-- thinkful-ei-rabbit -->
+<!-- Cap3_Client_Team_A -->
+<!-- theSwattr -->
+<!-- React, Node.js, Postgresql -->
+<!-- https://cap3-client-team-a.vercel.app/login -->
 
 <!-- ! highlight and 'ctrl+shift+L' to replace all ! -->
 
@@ -107,7 +107,7 @@ Fairly straight-forward Sass setup, with a simple reset and global stylesheet im
 This is at the root level, but it's use is important in understanding the syntax used throughout the app. I won't go too in-depth, but essentially what's going on is it's creating a global alias for the **[ src/ ]** file directory. The side effect is that you can re-factor local imports:
 
 ```js
-/* someComponent.js */
+/* deeplyNestedComponent.js */
 import { PostService } from '../../../../../src/services';
 ...to...
 import { PostService } from 'src/services';
@@ -119,19 +119,21 @@ For more info on the `jsconfig.json`, check out the docs [_*HERE!*_][jsconfig-do
 
 Not strictly necessary, but this can help prevent typos, along with making changes to the database less tedious to update throughout the app.
 
-<!-- ### services:
+### services:
 
-This is where the logic for interfacing with the server lives. Each "method" has been broken-out into it's own file. [ token.service.js ] is for handling Auth-token processes. -->
+This is where the logic for interfacing with the server lives. Each "method" has been broken-out into it's own file. [ token.service.js ] is for handling Auth-token processes.
 
-<!-- ### hooks:
+One exception in the `token.service.js` file, where all the interfacing with `window.localStorage` is handled. The other is `idle.service.js`, which determins the JWT expiration and regularly refreshes the stored `authToken`.
 
-This is where I keep custom hooks used by multiple components, though I only needed 1 for now. This hook handles every form in the app, recieving and updating piped-in form-fields. The major benefit of this kind of hook is that it minimizes the use of `useState` hooks throughout the app. -->
+### hooks:
+
+This is where I keep custom hooks used by multiple components, though only 1 was needed. This hook handles every form in the app, recieving and updating piped-in form-fields. The major benefit of this kind of hook is that it minimizes the use of `useState` hooks throughout the app and normalizes form handling.
 
 # TODO!!!
 
-<!-- ### context:
+### context:
 
-Because the scale of this app is so small, I've only created a single context. This is the "hook" way of doing context, both creating the context...
+This is the "hook" way of doing context, both creating the context...
 
 ```js
 export const DatabaseContext = createContext();
@@ -162,7 +164,7 @@ import { useContext } from 'react';
 import { DatabaseContext } from '.../databaseContext';
 ...
 const { data, functions, andMore } = useContext(DatabaseContext);
-``` -->
+```
 
 ### Barrels...
 
@@ -187,8 +189,6 @@ etc...
 
 You can see this in action in **[ app.js ]**:
 
-# TODO!!!
-
 ```js
 import {
   HomeRoute,
@@ -198,7 +198,7 @@ import {
   PrivateRoute,
   PublicRoute,
 } from 'src/routes';
-``` 
+```
 
 > _Note that the import doesn't point to the index file. Node perceives **[ index.js ]** files as points of entry and the default file to grab exports from, essentially making it an implicit file in import statements_
 
@@ -206,32 +206,32 @@ import {
 
 ## app:
 
-<!-- **useState**: `userName` is passed down to context and the Header, working as a boolean switch to control the behavior of the app. "If there isn't a name, don't display nav-bar links". This state is also controlled by both... -->
-
-<!-- **useEffect**: Basic "on mount" fetcher that checks local storage for an auth token, improving UX -->
-
-<!-- **Helper Functions**: `handleLoginSuccess` and `handleLogout` do what you'd expect by the name. Once a name is set to _State_, this fires off the context provider to proceed with fetching data from the server and sending the user to the home page. -->
+Nothing much to say. This is a basic point-of-entry using React-Router. The switch at the top level acts as a router for pointing those logged in/out to the right destination.
 
 ---
 
 ## routes:
 
-There's not much to say here, these essentially just import and render components, acting as entry points to component trees. However, I'll briefly cover...
+These essentially just import and render components, acting as entry points to component trees. However, I'll briefly cover...
 
 #### utils:
 
-**1. Private/Public-Routes**: This serves as a UX enhancement, both preventing users not logged in from accessing the app, and already logged in users from accessing the Login page.
-**1. PageNotFound**: Standard inclusion, and in the case of this version, you can access this page vie the "Gigs" page as this is a feature not yet implemented.
+**Private/Public-Routes**: This serves as a UX enhancement, both preventing users not logged in from accessing the app, and already logged in users from accessing the Login page.
+<!-- **1. PageNotFound**: Standard inclusion, and in the case of this version, you can access this page vie the "Gigs" page as this is a feature not yet implemented. -->
 
 ---
 
-<!-- ## components:
+## components:
 
-###### _I won't cover every component individually, but take a more broad-stroke approach, mentioning any note-worthy features when necessary_ -->
+###### _I won't cover every component individually, but take a more broad-stroke approach, mentioning any note-worthy features when necessary_
 
-<!-- ##### PropTypes:
+### mainContaner:
 
-I decided to use PropType validation throughout, and would say that I'm glad I did. PropTypes can really help with early debugging by throwing errors in the console that you wouldn't have caught normally until much later testing. On such example would be if you had a required prop that was, say, a function, if it wasn't properly passed down (by parents, context, conditionals, etc...), then the console would ask why your required function is "undefined", even when you haven't iomplemented said function yet. -->
+This acts like a new "root" component, much like the App component. There's some basic state handling at the top level, and another switch that takes care of the app proper, with the various extra context providers taking care of dynamic database operations.
+
+### a note on forms:
+
+This file - `src/helpers/formFields.js` - is the main "constructor" for rendering forms throughout the app. Each export contains some schema data and a single method that uses the schema data and any necessary state/handlers passed in to return an array of labels and inputs. Mainly, this keeps the component files much, much leaner and easier to read!
 
 <!-- ##### utils: -->
 
@@ -258,7 +258,7 @@ I decided to use PropType validation throughout, and would say that I'm glad I d
 ## Contact Russel:
 
 #### Github -
-#### LinkedIn - 
+#### LinkedIn -
 
 <!-- MARKDOWN LINKS & IMAGES -->
 
