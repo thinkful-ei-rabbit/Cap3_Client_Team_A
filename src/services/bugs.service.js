@@ -72,14 +72,11 @@ const BugsService = {
 
     return await res.json();
   },
-  async getBugById(id){
-    const res = await fetch(
-    `${config.API_ENDPOINT}/bugs/${id}`,
-      {
-        method: 'GET',
-        headers: TokenService.getHeaders(),
-      },
-    )
+  async getBugById(id) {
+    const res = await fetch(`${config.API_ENDPOINT}/bugs/${id}`, {
+      method: 'GET',
+      headers: TokenService.getHeaders(),
+    });
     return await res.json();
   },
   async editBug(newBug, id) {
