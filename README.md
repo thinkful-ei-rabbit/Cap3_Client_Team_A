@@ -241,7 +241,6 @@ This file - `src/helpers/formFields.js` - is the main "constructor" for renderin
 
 ## Contact Derek:
 
-
 #### Github - [musicMan1337][github]
 
 #### LinkedIn - [Derek-8Bit-Nellis][linkedin]
@@ -251,14 +250,21 @@ This file - `src/helpers/formFields.js` - is the main "constructor" for renderin
 #### Instagram - [@derek.8bit.nellis][instagram]
 
 ## Contact Mark:
+
 #### Github - [Mark-The-Dev](https://github.com/Mark-The-Dev)
 
 #### LinkedIn - [Mark Marcello](https://www.linkedin.com/in/mark-marcello/)
 
-## Contact Russel:
+## Contact Russell:
 
+#### Github - [Russjames92](https://github.com/Russjames92)
+
+<<<<<<< HEAD
 #### Github -
 #### LinkedIn -
+=======
+#### LinkedIn - [Russell Champlain](https://www.linkedin.com/in/russell-champlain/)
+>>>>>>> a1e4c43fd25ec404b1e62a7569897a2b53e67f66
 
 <!-- MARKDOWN LINKS & IMAGES -->
 
