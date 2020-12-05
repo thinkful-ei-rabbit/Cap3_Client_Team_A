@@ -49,6 +49,17 @@ const MainContainer = ({ history }) => {
     } else getApps();
   }, [history, userData]);
 
+  const addBugSuccess = (addName) => {
+    const addApp = apps.find((app) => app.rawName === addName);
+
+    if (selectedApp !== addApp) {
+      window.localStorage.setItem('selectedApp', addApp);
+      setSelectedApp(addApp);
+    }
+
+    history.push('/dashboard');
+  };
+
   const handleAppSelect = (app) => {
     window.localStorage.setItem('selectedApp', app.rawName);
     setSelectedApp(app);
@@ -88,7 +99,10 @@ const MainContainer = ({ history }) => {
               exact
               path="/dashboard"
               render={(routeProps) => (
-                <BugsContainer {...routeProps} />
+                <BugsContainer
+                  selectedApp={selectedApp}
+                  {...routeProps}
+                />
               )}
             />
             <Route
@@ -97,7 +111,12 @@ const MainContainer = ({ history }) => {
             />
             <Route
               path="/dashboard/add"
-              render={(routeProps) => <AddBugs {...routeProps} />}
+              render={(routeProps) => (
+                <AddBugs
+                  handleSuccess={addBugSuccess}
+                  {...routeProps}
+                />
+              )}
             />
             <Route
               path="/dashboard/edit/:bugId"

@@ -5,12 +5,13 @@ import { TokenService } from 'src/services';
 
 const PrivateRoute = ({ component, path }) => {
   const Component = component;
+  const payload = TokenService.parseAuthToken();
 
   return (
     <Route
       path={path}
       render={(routeProps) =>
-        TokenService.parseAuthToken() ? (
+        !payload || !payload.message ? (
           <Component {...routeProps} />
         ) : (
           <Redirect

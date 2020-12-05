@@ -2,13 +2,13 @@ import React from 'react';
 
 import './commentsPage.scss';
 
-import { CommentFields } from 'src/helpers/formFields';
 import { BugsService, CommentsService } from 'src/services';
 import { CommentsContext, UserContext } from 'src/context';
+import { CommentFields } from 'src/helpers/formFields';
 import useFormState from 'src/hooks/useFormState';
 
 const CommentsPage = ({ match, history }) => {
-  const [bugName, setBugName] = React.useState('');
+  const [bugName, setBugName] = React.useState(null);
   const [, setError] = React.useState(null);
 
   const { userData } = React.useContext(UserContext);
@@ -43,7 +43,8 @@ const CommentsPage = ({ match, history }) => {
       setBugName('');
       setCommentsByBugId();
     };
-  }, [match.params.bugId]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const handleSubmit = async (ev) => {
     ev.preventDefault();
@@ -75,25 +76,23 @@ const CommentsPage = ({ match, history }) => {
   );
 
   const renderComments =
-    bugComments && !bugComments[0]?.message
-      ? bugComments.map((comment) => {
-          return (
-            <li className="comment-item" key={comment.id}>
-              <div className="auth-and-comm">
-                <p className="comment-author">{`Author: ${comment.userName}`}</p>
-                <p className="comment-content">
-                  {`"`}
-                  {comment.comment}
-                  {`"`}
-                </p>
-              </div>
-              <div className="comment-time">
-                <p>{comment.createdDate}</p>
-              </div>
-            </li>
-          );
-        })
-      : null;
+    bugComments &&
+    !bugComments[0].message &&
+    bugComments.map((comment) => (
+      <li className="comment-item" key={comment.id}>
+        <div className="auth-and-comm">
+          <p className="comment-author">{`Author: ${comment.userName}`}</p>
+          <p className="comment-content">
+            {`"`}
+            {comment.comment}
+            {`"`}
+          </p>
+        </div>
+        <div className="comment-time">
+          <p>{comment.createdDate}</p>
+        </div>
+      </li>
+    ));
 
   const commentField = CommentFields.getInputFields(
     formFields,

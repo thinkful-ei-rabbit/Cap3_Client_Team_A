@@ -7,7 +7,7 @@ import { BugsService } from 'src/services';
 import { BugsContext, UserContext } from 'src/context';
 import useFormState from 'src/hooks/useFormState';
 
-const AddBugs = ({ history }) => {
+const AddBugs = ({ handleSuccess, history }) => {
   const [, setError] = React.useState(null);
 
   const { userData } = React.useContext(UserContext);
@@ -39,7 +39,7 @@ const AddBugs = ({ history }) => {
       await addNewUserBug(res.newBug);
     }
 
-    history.goBack();
+    handleSuccess(formFields.app);
   };
 
   const renderFormFields = AddBugFields.getInputFields(

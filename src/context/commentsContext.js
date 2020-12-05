@@ -23,7 +23,12 @@ const CommentsProvider = ({ children }) => {
   };
 
   const addNewComment = (newComment) => {
-    setBugComments((prev) => [...(prev || []), newComment]);
+    setBugComments((prev) => {
+      if (prev && prev[0].message) {
+        return [newComment];
+      }
+      return [...(prev || []), newComment];
+    });
   };
 
   const value = {

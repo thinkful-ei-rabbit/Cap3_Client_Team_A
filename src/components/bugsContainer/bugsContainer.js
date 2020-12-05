@@ -8,11 +8,18 @@ import { Bug, SeverityDiv } from './components';
 
 const BugsContainer = ({ history }) => {
   const [showComplete, setShowComplete] = React.useState(false);
+  const [toggledApp, setToggledApp] = React.useState('');
 
+  const { userData } = React.useContext(UserContext);
   const { bugs, selectedApp, userBugs } = React.useContext(
     BugsContext,
   );
-  const { userData } = React.useContext(UserContext);
+
+  React.useEffect(() => {
+    if (toggledApp !== selectedApp) {
+      setToggledApp(selectedApp);
+    }
+  }, [selectedApp, toggledApp]);
 
   const devBugs =
     bugs?.bugsPending &&
