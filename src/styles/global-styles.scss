@@ -22,3 +22,7 @@ body {
   background-color: $white;
   @include fluid-type(font-size, 320px, 1400px, 18px, 28px);
 }
+
+.error-class {
+  color: $white;
+}

@@ -34,7 +34,9 @@ const RegistrationForm = ({ onRegistrationSuccess }) => {
   };
 
   const renderError = !error ? null : (
-    <div role="alert">{`Oh no! ${error}`}</div>
+    <p role="alert" className="error-class">
+      Oh no! {error}
+    </p>
   );
 
   const inputFields = RegisterFields.getInputFields(
