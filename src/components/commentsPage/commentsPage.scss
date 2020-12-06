@@ -51,6 +51,10 @@
       padding: 10px;
     }
 
+    .welcome {
+      font-size: 1.17em;
+    }
+
     .new-comment-submit {
       border: none;
       outline: none;
@@ -94,6 +98,7 @@
   padding: 10px;
 }
 
-.edit-button:hover, .new-comment-submit:hover{
-  background-color:#BABABA
+.edit-button:hover,
+.new-comment-submit:hover {
+  background-color: #bababa;
 }

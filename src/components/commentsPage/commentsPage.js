@@ -111,7 +111,6 @@ const CommentsPage = ({ match, history }) => {
       {openEdit}
       <ul className="comments">{renderComments}</ul>
       <form onSubmit={handleSubmit} className="new-comment-form">
-        <h3 className="welcome">Add A Comment</h3>
         {commentField}
         <footer className="form-footer">
           <button type="submit" className="new-comment-submit">

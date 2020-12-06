@@ -288,6 +288,7 @@ export const CommentFields = {
   getInputFields(formFields, handleOnChange) {
     return (
       <label htmlFor="newComment" className="new-comment-label">
+        <h3 className="welcome">Add A Comment</h3>
         <textarea
           required
           id="newComment"
