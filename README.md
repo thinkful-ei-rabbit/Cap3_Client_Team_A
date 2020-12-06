@@ -43,19 +43,71 @@
 
 ---
 
-<h1 align="center"><a href="https://https://cap3-client-team-a.vercel.app/login">Set List App</a></h1>
-
-> ---
->
-> _This will be a comprehensive README for the sake of both prospective employers and fellow cohort peers, and whomever else would be interested in some of the techniques I've learned creating my frist Fullstack application. As a bonus, this README has some interesting implementations, though I won't address them here. Enjoy!_
->
-> ---
+<div align="center">
+  <h1><a href="https://https://cap3-client-team-a.vercel.app/login">Bug Tracker App</a></h1>
+  <p>Click the title to go to the live app!</p>
+  <h3>Demo Credentials:</h3>
+  <div><strong>Username:</strong> admin</div>
+  <div><strong>Password:</strong> pass</div>
+</div>
 
 ---
 
 ###### This README will systematically go over the entire app from the top level to the bottom layer, so I'll provide links to various sections for convenience.
 
 # TODO - ADD DIRECTORY LINKS!
+
+---
+
+## What's this app for!?
+
+This app is for tracking bugs in your app, offering an API for both users and developers to submit bugs and then follow-up with a kind of message board on a bug-by-bug basis. I'll quickly go over the basic functions of the client - with pictures!
+
+<div align="center">
+  <h5>Main Dashboard for devs...</h5>
+  <img src="images/dash-dev.png" alt="erm" width="500">
+  <h5>...and for users.</h5>
+  <img src="images/dash-nondev.png" alt="erm" width="500">
+</div>
+
+* The main take-away here is that devs can see all bugs, while regular users can only see bugs they submitted themselves. That's the basic for the difference between user and developer views throughout the app.
+
+##### Clicking on the _Toggle Dev_ button will take you to...
+
+<div align="center">
+  <h5>Toggle Dev Page</h5>
+  <img src="images/toggle-dev.png" alt="erm" width="500">
+</div>
+
+* Here you can see your current dev status, and enter a secret to toggle it on (or off!).
+
+##### Clicking on a bug will take you to...
+
+<div align="center">
+  <h5>Comments Page</h5>
+  <img src="images/add-comment.png" alt="erm" width="500">
+</div>
+
+* Here you can view all comments for the selected bug ordered by date, and create a new comment when desired.
+
+##### Clicking _Add Bug_ takes you to...
+
+<div align="center">
+  <h5>Add Bug Page</h5>
+  <img src="images/add-bug.png" alt="erm" width="500">
+</div>
+
+* Here you can add a new bug, with a default status and severity set to pending, later to be updated by a dev.
+
+
+##### Lastly, as a dev, there's an extra button above the comments when viewing a bug. Clicking the _Edit Bug_ button leads to...
+
+<div align="center">
+  <h5>Edit Bug Page</h5>
+  <img src="images/edit-bug.png" alt="erm" width="500">
+</div>
+
+* Devs can set status and severity here, along with some other parameters if the bug was submitted incorrectly.
 
 ---
 
@@ -217,6 +269,7 @@ These essentially just import and render components, acting as entry points to c
 #### utils:
 
 **Private/Public-Routes**: This serves as a UX enhancement, both preventing users not logged in from accessing the app, and already logged in users from accessing the Login page.
+
 <!-- **1. PageNotFound**: Standard inclusion, and in the case of this version, you can access this page vie the "Gigs" page as this is a feature not yet implemented. -->
 
 ---
@@ -260,11 +313,16 @@ This file - `src/helpers/formFields.js` - is the main "constructor" for renderin
 #### Github - [Russjames92](https://github.com/Russjames92)
 
 <<<<<<< HEAD
+
 #### Github -
+
 #### LinkedIn -
+
 =======
+
 #### LinkedIn - [Russell Champlain](https://www.linkedin.com/in/russell-champlain/)
->>>>>>> a1e4c43fd25ec404b1e62a7569897a2b53e67f66
+
+> > > > > > > a1e4c43fd25ec404b1e62a7569897a2b53e67f66
 
 <!-- MARKDOWN LINKS & IMAGES -->
 
