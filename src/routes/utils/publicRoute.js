@@ -12,7 +12,7 @@ const PublicRoute = ({ component, path }) => {
       path={path}
       render={(routeProps) =>
         userData.userName ? (
-          <Redirect to="/" />
+          <Redirect to="/dashboard" />
         ) : (
           <Component {...routeProps} />
         )

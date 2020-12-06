@@ -22,10 +22,10 @@ const App = () => {
       <Header />
       <div className="app-container">
         <Switch>
-          <PrivateRoute exact path="/" component={HomeRoute} />
-          <PrivateRoute path={DASHBOARD} component={DashboardRoute} />
+          <PublicRoute exact path="/" component={HomeRoute} />
           <PublicRoute path={LOGIN} component={LoginRoute} />
           <PublicRoute path={REGISTER} component={RegisterRoute} />
+          <PrivateRoute path={DASHBOARD} component={DashboardRoute} />
         </Switch>
       </div>
     </>

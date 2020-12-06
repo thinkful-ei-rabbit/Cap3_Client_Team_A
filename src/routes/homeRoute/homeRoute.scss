@@ -1,1 +1,19 @@
 @import 'src/styles/variables/colors.scss';
+
+.homeDiv {
+  width: 70vh;
+  color: $white;
+  line-height: 2.2rem;
+  margin-top: 15px;
+
+  > * {
+    margin-bottom: 15px;
+
+    .get-started {
+      margin-top: 10px;
+      font-size: 28px;
+      padding: 5px;
+      border-radius: 5px;
+    }
+  }
+}

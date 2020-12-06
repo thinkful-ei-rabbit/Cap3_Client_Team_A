@@ -44,7 +44,7 @@
 ---
 
 <div align="center">
-  <h1><a href="https://https://cap3-client-team-a.vercel.app/login">Bug Tracker App</a></h1>
+  <h1><a href="https://https://cap3-client-team-a.vercel.app/">Bug Tracker App</a></h1>
   <p>Click the title to go to the live app!</p>
   <h3>Demo Credentials:</h3>
   <div><strong>Username:</strong> admin</div>
@@ -79,7 +79,7 @@ This app is for tracking bugs in your app, offering an API for both users and de
   <img src="images/toggle-dev.png" alt="erm" width="500">
 </div>
 
-* Here you can see your current dev status, and enter a secret to toggle it on (or off!).
+* Here you can see your current dev status, and enter a secret to toggle it on (or off!). The current secret code is **`irdev`**
 
 ##### Clicking on a bug will take you to...
 
