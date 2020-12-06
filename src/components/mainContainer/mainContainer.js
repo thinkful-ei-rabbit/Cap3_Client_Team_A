@@ -55,7 +55,7 @@ const MainContainer = ({ history }) => {
     if (selectedApp !== addApp) {
       window.localStorage.setItem('selectedApp', addApp);
       setSelectedApp(addApp);
-    }
+    } else setSelectedApp((prev) => prev);
 
     history.push('/dashboard');
   };

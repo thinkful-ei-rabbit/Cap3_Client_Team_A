@@ -25,37 +25,15 @@
       background-color: $accent;
     }
 
-    .submit-button:hover{
-      background-color:#BABABA;
+    .submit-button:hover {
+      background-color: #bababa;
     }
 
     .link-to-register {
       text-align: center;
     }
-    .link-to-register:hover{
-      color:#BABABA;
+    .link-to-register:hover {
+      color: #bababa;
     }
   }
 }
-
-// .user_name-login-label,
-// .password-login-label {
-//   font-family: 'Andale Mono', sans-serif;
-// }
-
-// .user_name-login-input,
-// .password-login-input,
-// .submit-button {
-//   width: 90%;
-//   margin: 10px 0;
-//   font-size: 20px;
-//   text-align: left;
-//   padding: 10px;
-//   font-family: 'Andale Mono', sans-serif;
-// }
-
-// .submit-button {
-//   border: none;
-//   outline: none;
-//   background-color: #00a651;
-// }

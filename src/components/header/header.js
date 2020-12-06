@@ -34,13 +34,6 @@ const Header = () => {
     </div>
   );
 
-  // ? MOCK NAV BUTTONS
-  // const navButtons = ['/', '/dashboard'].map((route) => (
-  //   <Link key={route} to={route}>
-  //     <button>Quick nav: {route}</button>
-  //   </Link>
-  // ));
-
   return (
     <header className="dash-header">
       <h1>

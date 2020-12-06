@@ -26,7 +26,6 @@ const ToggleDev = ({ history }) => {
 
     window.localStorage.removeItem('selectedApp');
     toggleDev();
-    // history.push('/dashboard');
   };
 
   const devSecretField = ToggleDevFields.getInputFields();
