@@ -44,7 +44,7 @@
 ---
 
 <div align="center">
-  <h1><a href="https://https://cap3-client-team-a.vercel.app/">Bug Tracker App</a></h1>
+  <h1><a href="https://the-swattr.vercel.app">Bug Tracker App</a></h1>
   <p>Click the title to go to the live app!</p>
   <h3>Demo Credentials:</h3>
   <div><strong>Username:</strong> admin</div>
