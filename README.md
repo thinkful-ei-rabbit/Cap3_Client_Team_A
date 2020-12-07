@@ -217,6 +217,7 @@ These essentially just import and render components, acting as entry points to c
 #### utils:
 
 **Private/Public-Routes**: This serves as a UX enhancement, both preventing users not logged in from accessing the app, and already logged in users from accessing the Login page.
+
 <!-- **1. PageNotFound**: Standard inclusion, and in the case of this version, you can access this page vie the "Gigs" page as this is a feature not yet implemented. -->
 
 ---
@@ -259,12 +260,7 @@ This file - `src/helpers/formFields.js` - is the main "constructor" for renderin
 
 #### Github - [Russjames92](https://github.com/Russjames92)
 
-<<<<<<< HEAD
-#### Github -
-#### LinkedIn -
-=======
 #### LinkedIn - [Russell Champlain](https://www.linkedin.com/in/russell-champlain/)
->>>>>>> a1e4c43fd25ec404b1e62a7569897a2b53e67f66
 
 <!-- MARKDOWN LINKS & IMAGES -->
 
